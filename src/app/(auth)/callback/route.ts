@@ -6,11 +6,11 @@ export async function GET(request: Request) {
   const { searchParams, origin } = new URL(request.url);
   const code = searchParams.get('code');
   
-  // This dictates where the user lands after clicking the email link
   const next = searchParams.get('next') ?? '/billing';
 
   if (code) {
-    const cookieStore = cookies();
+    // THE FIX: Added "await" because cookies() is asynchronous in Next.js 15+
+    const cookieStore = await cookies();
     
     const supabase = createServerClient(
       process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -30,10 +30,8 @@ export async function GET(request: Request) {
       }
     );
     
-    // Exchanges the special email link code for a secure login session
     await supabase.auth.exchangeCodeForSession(code);
   }
 
-  // Instantly redirects you into the application
   return NextResponse.redirect(`${origin}${next}`);
 }
