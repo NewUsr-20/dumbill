@@ -1,11 +1,11 @@
 {
-  "name": "Segmentics",
+  "name": "Segmentics POS",
   "short_name": "Segmentics",
-  "description": "Fast and simple digital cash counter for small shops.",
-  "start_url": "/billing",
+  "description": "Lightning-fast billing and POS system for small shops.",
+  "start_url": "/",
   "display": "standalone",
   "orientation": "portrait",
-  "background_color": "#f9fafb",
+  "background_color": "#ffffff",
   "theme_color": "#000000",
   "icons": [
     {
