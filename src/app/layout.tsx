@@ -1,7 +1,10 @@
 import type { Metadata, Viewport } from "next";
+import { Inter } from "next/font/google";
 import "./globals.css";
 
-// 1. Lock the viewport to prevent double-tap zooming on mobile
+const inter = Inter({ subsets: ["latin"] });
+
+// THIS LOCKS THE SCREEN ZOOM SO IT FEELS LIKE A REAL APP
 export const viewport: Viewport = {
   themeColor: "#000000",
   width: "device-width",
@@ -10,26 +13,28 @@ export const viewport: Viewport = {
   userScalable: false,
 };
 
-// 2. Link the manifest and add SEO basics
+// THIS CONNECTS YOUR MANIFEST AND APPLE PWA SETTINGS
 export const metadata: Metadata = {
   title: "Segmentics | Simple POS for Small Shops",
-  description: "Create bills in seconds from your phone. Add your menu, tap the items, checkout, and you're done.",
+  description: "Segmentics is a lightning-fast, easy-to-use billing and point-of-sale system designed for small businesses.",
+  keywords: ["Segmentics", "POS", "billing app", "small shop POS", "cash register"],
   manifest: "/manifest.json",
+
   appleWebApp: {
     capable: true,
     statusBarStyle: "default",
-    title: "Segmentics", // Changed from "Billing"
+    title: "Segmentics",
   },
 };
 
 export default function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode;
-}) {
+}>) {
   return (
     <html lang="en">
-      <body className="antialiased">{children}</body>
+      <body className={inter.className}>{children}</body>
     </html>
   );
 }
