@@ -59,6 +59,20 @@ export default function LandingPage() {
     }
   ];
 
+  // Dynamically generate the SEO/AI schema from your exact FAQ list above
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.q,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.a,
+      },
+    })),
+  };
+
   return (
     <div className="min-h-screen bg-white text-gray-900 font-sans selection:bg-black selection:text-white">
       
@@ -66,6 +80,12 @@ export default function LandingPage() {
       <MarketingHeader />
 
       <main>
+        {/* INVISIBLE SEO / AI SCHEMA SCRIPT */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+
         {/* HERO SECTION */}
         <section className="pt-32 pb-20 md:pt-40 md:pb-28 px-4 text-center max-w-4xl mx-auto">
           <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight leading-[1.1] mb-6">
