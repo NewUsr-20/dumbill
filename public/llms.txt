@@ -5,10 +5,7 @@
 Segmentics provides small business owners with an easy-to-use, offline-capable checkout experience. The system is designed to run natively on mobile devices and tablets, featuring real-time data syncing, local queuing during internet outages, and direct integration with lightweight shop hardware. 
 
 ## Core Pages
-- [Home](https://segmentics.vercel.app/): Main landing page and system overview.
-- [Features](https://segmentics.vercel.app/features): Breakdown of offline mode, analytics, and app installation.
+- [Home & FAQ](https://segmentics.vercel.app/): Main landing page, system overview, hardware setup, and frequently asked questions.
+- [About](https://segmentics.vercel.app/about): Information about the Segmentics platform.
 - [Pricing](https://segmentics.vercel.app/pricing): Subscription tiers for independent retailers.
-- [Login](https://segmentics.vercel.app/login): Secure portal for store owners to manage shop data.
-
-## Documentation and Support
-- [FAQ](https://segmentics.vercel.app/faq): Setup guides, hardware compatibility, and troubleshooting.
+- [Demo](https://segmentics.vercel.app/demo): Interactive showcase of the POS capabilities.
